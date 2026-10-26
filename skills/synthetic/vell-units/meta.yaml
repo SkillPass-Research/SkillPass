@@ -1,0 +1,14 @@
+name: vell-units
+kind: unit_system
+identifiers:
+  - Vellmark
+  - vellstride
+  - thrane
+  - knell
+  - pibbet
+  - gorm
+  - skeppel
+  - quobb
+  - vessick
+  - drammel
+  - fervin

@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets
+.env
+!.env.example
+
+# Model weights and tensors are never committed; S-Passes regenerate from the seed
+*.safetensors
+*.bin
+*.pt
+/passes/
+/sop-bench/
+
+# Run locks and scratch
+results/**/.lock
+.cache/
+.DS_Store

@@ -1,0 +1,22 @@
+# SOP-Bench, gemma-4-12b lineup, the offset baseline (Section 5.1): the skill's own embeddings each
+# moved 2.2 margins along a random direction; three seeds, as the S-Pass.
+# The data is not in this repository: fetch it at the pinned commit with --fetch into sopbench_dir.
+sopbench_dir: ../sop-bench
+sopbench_commit: f6d43858b94cf439854038101bce0eecd3e16eae
+lineup: gemma-4-12b
+domains: all
+# Longer than any procedure an S-Pass has been made for (4,587 tokens).
+exclude: [video_annotation]
+# Each domain's decoy is the next domain in the list, except where a version of the same
+# procedure would follow: referral_abuse_detection_v2 shares most of v1's text, so v1's decoy is
+# customer_service, the procedure of nearest length with the least overlap.
+decoys:
+  referral_abuse_detection_v1: customer_service
+# warehouse_package_inspection lists no inputs; the benchmark's answer-free test set adds two
+# columns that follow from the outcome and are left out.
+input_exclusions:
+  warehouse_package_inspection: [chargeable, receipt_date]
+construction: offset
+seeds: [1, 2, 3]
+tasks_per_domain: null
+readers: all

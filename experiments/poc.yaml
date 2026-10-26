@@ -1,0 +1,10 @@
+# Proof of concept (Section 5.2, Table 1): the three held-out synthetic skills, each with its
+# decoy drawn from the same three in a cycle, three seeds. The construction's settings are the
+# registry's (skillpass/registry.py) and are never set here.
+lineup: qwen2.5-7b
+skills: [fictional-api, vell-units, cloudloom-stilling]
+decoys:
+  fictional-api: vell-units
+  vell-units: cloudloom-stilling
+  cloudloom-stilling: fictional-api
+seeds: [1, 2, 3]

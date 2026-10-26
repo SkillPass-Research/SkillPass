@@ -1,0 +1,23 @@
+name: fictional-api
+kind: fictional_api
+identifiers:
+  - twf_greet
+  - twf_reserve_berth
+  - twf_load_crate
+  - twf_cast_off
+  - vessel_tag
+  - ferry_sigil
+  - berth_quota
+  - tidemark
+  - crate_glyph
+  - heft_in_grains
+  - TWF-117
+  - SILTED_BERTH
+  - TWF-240
+  - CRATE_OVERHEFT
+  - TWF-352
+  - SIGIL_MISMATCH
+  - TWF-409
+  - TIDE_EXPIRED
+  - TWF-503
+  - FERRY_BECALMED

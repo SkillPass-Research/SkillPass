@@ -1,0 +1,51 @@
+- id: knells-per-thrane
+  text: How many knells make one thrane in the Vellmark measures? Write the answer as a Vellmark quantity.
+  checker: exact
+  expected: 12 knells
+
+- id: vellstride-in-knells
+  text: Convert 1 vellstride into knells. Write the answer as a Vellmark quantity.
+  checker: exact
+  expected: 480 knells
+
+- id: pibbets-to-mixed
+  text: Write 100 pibbets as a mixed Vellmark length.
+  checker: regex
+  expected: '^1 thrane\s+2 knells\s+2 pibbets$'
+  example: 1 thrane 2 knells 2 pibbets
+
+- id: gorms-in-skeppels
+  text: Convert 3 gorms into skeppels. Write the answer as a Vellmark quantity.
+  checker: exact
+  expected: 48 skeppels
+
+- id: boiling-point
+  text: At what reading does water boil in the Vellmark heat unit, and what is that unit called?
+  checker: contains_all
+  expected: ["60", fervin]
+
+- id: mainland-to-fervins
+  text: A kettle reads 50 mainland degrees. What is that in Vellmark heat? Write the answer as a Vellmark quantity.
+  checker: exact
+  expected: 30 fervins
+
+- id: vellstrides-in-thranes
+  text: A rope is 2 vellstrides long. How long is it in thranes? Write the answer as a Vellmark quantity.
+  checker: exact
+  expected: 80 thranes
+
+- id: vessicks-to-drammels
+  text: Convert 5 vessicks 4 drammels into drammels. Write the answer as a Vellmark quantity.
+  checker: regex
+  expected: '^49\s+drammels$'
+  example: 49 drammels
+
+- id: rounding-a-half
+  text: A measured length comes out at 1 thrane, 5 knells and 3.5 pibbets. How is it written as a Vellmark quantity?
+  checker: contains_all
+  expected: [1 thrane, 5 knells, 3 pibbets]
+
+- id: largest-length
+  text: Which is the largest Vellmark unit of length, and how many thranes does it hold?
+  checker: contains_all
+  expected: [vellstride, "40"]

@@ -1,0 +1,51 @@
+- id: first-step
+  text: Which step opens the stilling of the Cloudloom? Answer with the step label only.
+  checker: exact
+  expected: CL-S1
+
+- id: normal-report
+  text: Every step of a Cloudloom stilling went as written. What is the final report? Answer with the report only.
+  checker: exact
+  expected: LOOM-STILLED
+
+- id: step-order
+  text: List the labels of the Cloudloom stilling steps in the order they are done, separated by a comma and one space.
+  checker: regex
+  expected: '^CL-S1,\s*CL-S2,\s*CL-S3,\s*CL-S4,\s*CL-S5,\s*CL-S6,\s*CL-S7$'
+  example: CL-S1, CL-S2, CL-S3, CL-S4, CL-S5, CL-S6, CL-S7
+
+- id: unanswered-bell
+  text: No Loomwright answers the bell at the start of a Cloudloom stilling, and every other step goes as written. What is the final report? Answer with the report only.
+  checker: exact
+  expected: LOOM-UNWATCHED
+
+- id: humming-jar
+  text: While the operator bleeds the jar during a Cloudloom stilling, the jar hums instead of falling silent. After closing the tap, what does the operator ring, and how long do they wait?
+  checker: contains_all
+  expected: [hushbell, forty breaths]
+
+- id: gate-notch
+  text: To which notch must the Cloudloom's vapour gate be closed? Answer with the notch marking only.
+  checker: exact
+  expected: nimb-0
+
+- id: stuck-gate
+  text: The Cloudloom's vapour gate sticks before reaching its notch. What is the final report? Answer with the report only.
+  checker: exact
+  expected: LOOM-JAMMED
+
+- id: before-folding
+  text: Which step must be finished before the Cloudloom's cloud shuttle is folded, and what does that step bleed? Give the step label and the name of what it bleeds.
+  checker: contains_all
+  expected: [CL-S4, thunderjar]
+
+- id: crown-threshold
+  text: Below what drizzle gauge reading must the Cloudloom's spindle crown be lowered? Give the number and the unit.
+  checker: regex
+  expected: '^4\s+mizzlets$'
+  example: 4 mizzlets
+
+- id: squallback-next
+  text: While the operator lowers the Cloudloom's spindle crown, the drizzle gauge reads 11 mizzlets. Which step does the operator go back to? Answer with the step label only.
+  checker: exact
+  expected: CL-S2

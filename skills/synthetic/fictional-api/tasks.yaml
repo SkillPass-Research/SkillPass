@@ -1,0 +1,51 @@
+- id: first-call
+  text: Which call must open every Thistlewane Ferry Relay session? Answer with the call name only.
+  checker: exact
+  expected: twf_greet
+
+- id: call-order
+  text: List the four Thistlewane Ferry Relay calls of one successful shipment, in the order they must be made.
+  checker: regex
+  expected: '^twf_greet,\s*twf_reserve_berth,\s*twf_load_crate,\s*twf_cast_off$'
+  example: twf_greet, twf_reserve_berth, twf_load_crate, twf_cast_off
+
+- id: weight-parameter
+  text: Which parameter of twf_load_crate carries the crate's weight? Answer with the parameter name only.
+  checker: exact
+  expected: heft_in_grains
+
+- id: load-crate-parameters
+  text: Name every parameter that twf_load_crate takes.
+  checker: contains_all
+  expected: [crate_glyph, heft_in_grains, tidemark]
+
+- id: overweight-error
+  text: A client loads a crate weighing 7300 grains. Which error does the relay return? Give the code and its label.
+  checker: regex
+  expected: '^TWF-240\s+CRATE_OVERHEFT$'
+  example: TWF-240 CRATE_OVERHEFT
+
+- id: label-352
+  text: What is the label of Thistlewane error TWF-352? Answer with the label only.
+  checker: exact
+  expected: SIGIL_MISMATCH
+
+- id: after-expired-tide
+  text: A twf_load_crate call fails because its tidemark is 95 seconds old. Which call does the client make next? Answer with the call name only.
+  checker: exact
+  expected: twf_reserve_berth
+
+- id: early-reserve-error
+  text: A client calls twf_reserve_berth without having opened a session first. Which error code does the relay return? Answer with the code only.
+  checker: exact
+  expected: TWF-117
+
+- id: cast-off-input
+  text: Which value must be passed to twf_cast_off, and which call issued it? Name both.
+  checker: contains_all
+  expected: [ferry_sigil, twf_greet]
+
+- id: retried-error
+  text: Which Thistlewane error is the only one retried without changing the call sequence, and what is its label? Give the code and the label.
+  checker: contains_all
+  expected: [TWF-503, FERRY_BECALMED]
